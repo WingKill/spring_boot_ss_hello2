@@ -22,4 +22,10 @@ public class HomeController {
 		System.out.println("go()..");
 		return "go";
 	}
+	
+	@GetMapping("/go/go2")
+	public String go2() {
+		System.out.println("go2()..");
+		return "go/go2";
+	}
 }
