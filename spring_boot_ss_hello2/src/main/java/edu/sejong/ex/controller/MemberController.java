@@ -20,23 +20,23 @@ public class MemberController {
 		return "member/register";
 	}
 	
-	@RequestMapping("/register")
-	public String register( @RequestParam("id")String id,
-							@RequestParam("pw")String pw,
-							@RequestParam("name")String name,
-							@RequestParam("email")String email,
-							@RequestParam("age")int age,
-							Model model) {
-		System.out.println("register()..");
-		MemberVo memberVo = new MemberVo(name, id, pw, email, age);
-		model.addAttribute("member", memberVo);
-		return "member/register";
-	}
-	
-	//	@RequestMapping("/register")
-//	public String register(MemberVo memberVo, Model model) {
+//	@RequestMapping("/register")
+//	public String register( @RequestParam("id")String id,
+//							@RequestParam("pw")String pw,
+//							@RequestParam("name")String name,
+//							@RequestParam("email")String email,
+//							@RequestParam("age")int age,
+//							Model model) {
 //		System.out.println("register()..");
+//		MemberVo memberVo = new MemberVo(name, id, pw, email, age);
 //		model.addAttribute("member", memberVo);
 //		return "member/register";
 //	}
+	
+	@RequestMapping("/register")
+	public String register(MemberVo memberVo, Model model) {
+		System.out.println("register()..");
+		model.addAttribute("member", memberVo);
+		return "member/register";
+	}
 }
